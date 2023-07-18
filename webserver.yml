@@ -4,5 +4,5 @@
   tasks:
   - name: Install the Java on Ubuntu
     apt:
-     name: "{{myjavainstall}}"
+     name: openjdk-8-jre
      state: present
