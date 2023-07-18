@@ -2,7 +2,12 @@
 - hosts: webservers
   become: yes
   tasks:
-  - name: Install the apache software on Webserver
+  - name: Install the webserver on Ubuntu
     apt:
-      name: "{{wget_install}}"
-      state: present     
+     name: "{{myapacheinstall}}"
+     state: present
+
+  - name: Please Start the Webserver on Ubuntu
+    service:
+      name: apache2
+      state: started
