@@ -2,13 +2,13 @@
 - hosts: webservers
   become: yes
   tasks:
-  - name: Install the Tree on Ubuntu
+  - name: Install the apache2 on Ubuntu
     apt:
-      name: tree
+      name: apache2
       state: present
     when: ansible_os_family == "Debian"
 
-  - name: start the tree service
+  - name: start the apache2 service
     service:
-      name: tree
+      name: apache2
       state: started  
