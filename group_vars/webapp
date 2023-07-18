@@ -1,6 +1,6 @@
 ---
-ApacheInstall: apache2
-PythonInstall: python3
-TreeInstall: tree
-WgetInstall: wget
-GitInstall: git
+apacheinstall: apache2
+pythoninstall: python3
+treeinstall: tree
+wgetinstall: wget
+gitinstall: git
