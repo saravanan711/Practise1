@@ -4,7 +4,7 @@
   tasks:
   - name: Intsall mutiple Tasks
     apt:
-      name: "{{items}}"
+      name: "{{ item }}"
       state: present
     loop:
       - tree
