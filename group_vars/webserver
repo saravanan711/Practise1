@@ -1,3 +1,2 @@
 ---
-myapacheinstall: apache2
-wget_install: wget
+myjavainstall: openjdk-8-jre
