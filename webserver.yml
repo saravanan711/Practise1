@@ -2,7 +2,7 @@
 - hosts: webservers
   become: yes
   tasks:
-   - name: Install the apache software on Webserver
-     apt:
-        name: "{{ApacheInstall}}"
-        state: present
+  - name: Install the apache software on Webserver
+    apt:
+      name: "{{ApacheInstall}}"
+      state: present     
