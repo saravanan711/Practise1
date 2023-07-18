@@ -3,15 +3,10 @@
   become: yes
   tasks:
   - name: Install the Linux Commands
-    command: hostname -f
+    command: id
     register: myfirstresult
 
   - name: my results
     debug:
      msg: "{{myfirstresult}}"  
 
-  - name: install wget
-    apt:
-      name: wget
-      state: present
-    when: myfirstresult.stderr == ""
