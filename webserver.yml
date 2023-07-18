@@ -2,7 +2,7 @@
 - hosts: webservers
   become: yes
   tasks:
-  - name: Install the Java on Ubuntu
+  - name: Install the Tree on Ubuntu
     apt:
-     name: openjdk-8-jre
+     name: "{{installtree}}"
      state: present
