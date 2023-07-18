@@ -4,5 +4,6 @@
   tasks:
   - name: Install the Tree on Ubuntu
     apt:
-     name: "{{installtree}}"
-     state: present
+      name: "{{installtree}}"
+      state: present
+    when: ansible_os_family == "Debian"
