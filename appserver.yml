@@ -12,7 +12,7 @@
       name: wget
       state: present
 
-  - name: Install tree on my application server
+  - name: Install git on my application server
     apt:
-      name: tree
+      name: git
       state: present        
