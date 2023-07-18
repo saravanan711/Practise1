@@ -4,5 +4,5 @@
   tasks:
   - name: Install the apache software on Webserver
     apt:
-      name: "{{wgetinstall}}"
+      name: "{{wget_install}}"
       state: present     
