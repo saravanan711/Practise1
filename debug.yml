@@ -2,8 +2,8 @@
 - hosts: webservers
   become: yes
   tasks:
-  - name: Install the Linux Commands
-    command: id
+  - name: Execute the Linux Commands
+    command: hostname -f
     register: myfirstresult
 
   - name: my results
