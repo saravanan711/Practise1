@@ -1,0 +1,15 @@
+---
+- hosts: appservers
+  become: yes
+  tasks:
+  - name: Intsall mutiple Tasks
+    apt:
+      name: "{{items}}"
+      state: present
+    loop:
+      - tree
+      - python3
+      - wget
+      - git
+      - gnome-chess
+      - rhythmbox  
