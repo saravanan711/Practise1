@@ -9,5 +9,4 @@
     loop:
       - git
       - wget
-      - rhythmbox
       - apache2
