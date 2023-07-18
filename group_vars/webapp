@@ -1,0 +1,6 @@
+---
+ApacheInstall: apache2
+PythonInstall: python3
+TreeInstall: tree
+WgetInstall: wget
+GitInstall: git
