@@ -7,9 +7,9 @@
       name: "{{ item }}"
       state: present
     loop:
-      - tree
-      - python3
-      - wget
       - git
+      - tree
+      - wget 
+      - python3
       - gnome-chess
-      - rhythmbox  
+      - rhythmbox
