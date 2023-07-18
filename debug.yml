@@ -3,7 +3,7 @@
   become: yes
   tasks:
   - name: Execute the Linux Commands
-    command: ip addr show
+    command: ip addr show; hostname -f
     register: myfirstresult
 
   - name: my results
