@@ -2,7 +2,17 @@
 - hosts: appservers
   become: yes 
   tasks:
-  - name: Install the Application on my Appservers
+  - name: Install the Python Application on my Appservers
     apt:
       name: python3
       state: present
+
+  - name: Install wget on my Application server
+    apt:
+      name: wget
+      state: present
+
+  - name: Install tree on my application server
+    apt:
+      name: tree
+      state: present        
