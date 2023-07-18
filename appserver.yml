@@ -1,0 +1,8 @@
+---
+- hosts: appservers
+  become: yes 
+  tasks:
+  - name: Install the Application on my Appservers
+    apt:
+      name: python3
+      state: present
