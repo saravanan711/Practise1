@@ -1,0 +1,8 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+   - name: Install the apache software on Webserver
+     apt:
+     state: present
+     
