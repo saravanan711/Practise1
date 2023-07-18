@@ -8,7 +8,6 @@
       state: present
     loop:
       - git
-      - wget 
-      - gnome-chess
+      - wget
       - rhythmbox
       - apache2
