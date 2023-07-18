@@ -4,5 +4,5 @@
   tasks:
    - name: Install the apache software on Webserver
      apt:
-       name: "{{ApacheInstall}}"
-       state: present
+        name: "{{ApacheInstall}}"
+        state: present
