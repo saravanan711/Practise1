@@ -1,0 +1,8 @@
+---
+- name: Update the Package
+  apt:
+    update_cahe: yes
+- name: Install the JAVA Latest version
+  apt:
+    name: default-jdk
+    state: present    

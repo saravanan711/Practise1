@@ -1,0 +1,123 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: Install the webserver on Ubuntu
+    apt:
+     name: "{{myapacheinstall}}"
+     state: present
+
+  - name: Please Start the Webserver on Ubuntu
+    service:
+      name: apache2
+      state: started
+
+
+---
+ - hosts: webservers
+   become: yes
+   tasks:
+    - name: Install Tree on my wenservers
+      apt:
+       name: "{{mytreeinstall}}"
+       state: present
+      when: ansible_os_family == "Debian" 
+
+
+---
+ - hosts: 172.31.5.245
+   become: yes
+   tasks:
+    - name: Install the multiple tasks
+      apt:
+       name: "{{ item }}"
+       state: present
+      loop:
+       - git
+       - tree
+       - wget 
+       - python3
+       - gnome-chess
+       - rhythmbox
+
+
+
+---
+ - hosts: 172.31.5.245
+   become: yes
+   tasks:
+    - name: Install github
+      apt:
+       name: git
+       state: present
+      tags: mygit
+    - name: Install tree
+      apt:
+       name: tree
+       state: present
+      tags: mytree
+    - name: Install wget
+      apt:
+       name: wget
+       state: present
+      tags: mywget    
+    - name: Install Python
+      apt:
+       name: python3
+       state: present
+      tags: mypython
+
+
+---
+ - hosts: webservers
+   become: yes
+   tasks:
+    - name: install JAVA on Ubuntu
+      apt:
+        name: "{{myjavainstall}}"
+        state: present
+      when: ansible_os_family =="Debian"
+
+---
+myjavainstall: openjdk-8-jre
+
+
+---
+myapacheinstall: apache2
+myjavainstall: openjdk-8-jre
+mytreeinstall: tree
+
+---
+ - hosts: 172.31.11.85
+   become: yes
+   tasks:
+    - name: i want to run the Linux commands
+      command: hostname -f
+      register: myfirsttaskresults
+
+    - name: Here is the first TASK results
+      debug:
+       msg: "{{myfirsttaskresults}}"  
+
+    - name: Install tree
+      apt:
+       name: tree
+       state: present
+      when:   myfirsttaskresults.stderr ==""
+
+    - name: Install git
+      apt:
+       name: git
+       state: present
+      when:   myfirsttaskresults.stderr !="" 
+
+
+  - name: install wget
+    apt:
+      name: wget
+      state: present
+    when: myfirstresult.stderr == ""   
+
+
+
+
