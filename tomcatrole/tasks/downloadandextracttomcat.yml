@@ -1,7 +1,7 @@
 ---
 - name: Download the tomcat installer
   get_url: 
-    src: https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.8/bin/apache-tomcat-10.1.8.tar.gz
+    url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.8/bin/apache-tomcat-10.1.8.tar.gz
     dest: /home/ubuntu/apache-tomcat-10.1.8.tar.gz
     force_basic_auth: yes 
 
