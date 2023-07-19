@@ -2,4 +2,4 @@
 - hosts: 172.31.25.66
   become: yes
   roles:
-  - {role: tomcatrole, when: ansible_os_family: "Debian"}
+  - {role: tomcatrole, when: ansible_os_family == "Debian"}
