@@ -2,7 +2,6 @@
 - name: Update the Package
   apt:
     update_cache: yes
-
 - name: Install the JAVA Latest version
   apt:
     name: default-jdk
