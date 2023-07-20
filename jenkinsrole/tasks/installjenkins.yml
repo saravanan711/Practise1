@@ -2,10 +2,21 @@
 - name: Update the Package
   apt:
     update_cache: yes
+
 - name: Install the JAVA Latest version
   apt:
     name: default-jdk
     state: present 
+
+- name: Install Git 
+  apt:
+    name: git
+    state: present   
+
+- name: Install wget 
+  apt:
+    name: wget
+    state: present     
 
 - name: ensure the jenkins apt repository key is installed
   apt_key: url=https://pkg.jenkins.io/debian/jenkins.io-2023.key state=present
@@ -20,5 +31,4 @@
   become: yes
 
 - name: ensure jenkins is running
-  service: 
-  -  name= jenkins state= started
+  service: name=jenkins state=started
